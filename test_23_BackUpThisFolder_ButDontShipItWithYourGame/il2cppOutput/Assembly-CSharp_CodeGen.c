@@ -1,0 +1,90 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void GrabLightToggle_Awake_m1DEAC1982B9E73F7C51EFD6C5EBA2206346F807C (void);
+extern void GrabLightToggle_OnEnable_mB3B3705E5EB54F353A6A6A1F6DA1DE2EBB8EEDAF (void);
+extern void GrabLightToggle_OnDisable_m04B9B2002A4D0DDEAD3C7B67F8D9283C6764A608 (void);
+extern void GrabLightToggle_Update_mEC5947D0CB095F1B2DE7BB851179B7323713AE4D (void);
+extern void GrabLightToggle_ToggleLight_mBADFCA38EBB4FB3C258C9610B72E210649A65F41 (void);
+extern void GrabLightToggle__ctor_m9BEDFC36CE750778FA0D3C67D0FF18ADDD131F15 (void);
+extern void remote_music_Awake_m51C45ABAD72DE595ADCE9C8B9AA83A45928E0BA2 (void);
+extern void remote_music_OnEnable_m2228F425182E248DCD6CA6F9F5CD81BEC16614DB (void);
+extern void remote_music_OnDisable_m6663C6C90776844A5E4DA76CA50BA45B10E4B860 (void);
+extern void remote_music_Update_mBB644569D1FEE4605A4C340B564ECAFA98D7E30D (void);
+extern void remote_music_OnSelectEntered_m2578B16D5370CEF525FE0364F3C86B382963D1B6 (void);
+extern void remote_music_OnSelectExited_m77818CB6ECB333980C94A3E9AA286A684C99D900 (void);
+extern void remote_music_ToggleMusic_mA303515CEF9CB415F59D265F4328DA59C5B86D47 (void);
+extern void remote_music__ctor_mDF114BB0FE10BE8E3DDF491D9AE485C5545018A6 (void);
+extern void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (void);
+extern void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
+static Il2CppMethodPointer s_methodPointers[18] = 
+{
+	GrabLightToggle_Awake_m1DEAC1982B9E73F7C51EFD6C5EBA2206346F807C,
+	GrabLightToggle_OnEnable_mB3B3705E5EB54F353A6A6A1F6DA1DE2EBB8EEDAF,
+	GrabLightToggle_OnDisable_m04B9B2002A4D0DDEAD3C7B67F8D9283C6764A608,
+	GrabLightToggle_Update_mEC5947D0CB095F1B2DE7BB851179B7323713AE4D,
+	GrabLightToggle_ToggleLight_mBADFCA38EBB4FB3C258C9610B72E210649A65F41,
+	GrabLightToggle__ctor_m9BEDFC36CE750778FA0D3C67D0FF18ADDD131F15,
+	remote_music_Awake_m51C45ABAD72DE595ADCE9C8B9AA83A45928E0BA2,
+	remote_music_OnEnable_m2228F425182E248DCD6CA6F9F5CD81BEC16614DB,
+	remote_music_OnDisable_m6663C6C90776844A5E4DA76CA50BA45B10E4B860,
+	remote_music_Update_mBB644569D1FEE4605A4C340B564ECAFA98D7E30D,
+	remote_music_OnSelectEntered_m2578B16D5370CEF525FE0364F3C86B382963D1B6,
+	remote_music_OnSelectExited_m77818CB6ECB333980C94A3E9AA286A684C99D900,
+	remote_music_ToggleMusic_mA303515CEF9CB415F59D265F4328DA59C5B86D47,
+	remote_music__ctor_mDF114BB0FE10BE8E3DDF491D9AE485C5545018A6,
+	Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6,
+	Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
+};
+static const int32_t s_InvokerIndices[18] = 
+{
+	15000,
+	15000,
+	15000,
+	15000,
+	15000,
+	15000,
+	15000,
+	15000,
+	15000,
+	15000,
+	11379,
+	11379,
+	15000,
+	15000,
+	15000,
+	15000,
+	26046,
+	15000,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	18,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};
