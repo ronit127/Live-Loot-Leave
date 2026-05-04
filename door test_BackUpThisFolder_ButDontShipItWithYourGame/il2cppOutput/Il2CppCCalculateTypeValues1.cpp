@@ -29784,7 +29784,7 @@ struct StencilDeferredPasses_t9479EED6C67F127B3EB4FCA8E5F664F0E95AFC6E
 {
 	int32_t ___value__;
 };
-struct U3CSinkDoorU3Ed__4_t3585CC0A10DE6DF09D6149E95B40060DEC58C6A7  : public RuntimeObject
+struct U3CMoveDoorU3Ed__9_tD6DE611D32D005D7A3FD56538E093CC51986BAF7  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -46033,7 +46033,11 @@ struct DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD  : public MonoBehavi
 {
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___door;
 	float ___animationDuration;
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___doorAudioSource;
 	bool ___isAnimating;
+	bool ___isDoorDown;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___upPosition;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___downPosition;
 };
 struct DrawCommandOutputPerBatch_t4A45E11E8E7CBD974DA211971082C0ED66445215 
 {
@@ -60849,7 +60853,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize9338 = { sizeof(U3CModuleU3E
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize9339;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize9339 = { sizeof(copier_t41FD1917B7107DD57A439EA3C0FF23E2D7FDE16E), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize9340;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize9340 = { sizeof(U3CSinkDoorU3Ed__4_t3585CC0A10DE6DF09D6149E95B40060DEC58C6A7), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize9340 = { sizeof(U3CMoveDoorU3Ed__9_tD6DE611D32D005D7A3FD56538E093CC51986BAF7), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize9341;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize9341 = { sizeof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize9342;

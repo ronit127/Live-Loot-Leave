@@ -3072,7 +3072,7 @@ struct Type_t978C0427FF2CB3DE1CC7BB6CC19BAC9005EC519D
 {
 	int32_t ___value__;
 };
-struct U3CSinkDoorU3Ed__4_t3585CC0A10DE6DF09D6149E95B40060DEC58C6A7  : public RuntimeObject
+struct U3CMoveDoorU3Ed__9_tD6DE611D32D005D7A3FD56538E093CC51986BAF7  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -5595,7 +5595,11 @@ struct DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD  : public MonoBehavi
 {
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___door;
 	float ___animationDuration;
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___doorAudioSource;
 	bool ___isAnimating;
+	bool ___isDoorDown;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___upPosition;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___downPosition;
 };
 struct GrabLightToggle_tF97DB29FF9485A212376591F2ADAC03EFE4CDD10  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -7089,10 +7093,10 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9339[7] =
 	static_cast<int32_t>(offsetof(copier_t41FD1917B7107DD57A439EA3C0FF23E2D7FDE16E, ___vendingItems)),static_cast<int32_t>(offsetof(copier_t41FD1917B7107DD57A439EA3C0FF23E2D7FDE16E, ___itemWeights)),static_cast<int32_t>(offsetof(copier_t41FD1917B7107DD57A439EA3C0FF23E2D7FDE16E, ___spawnPoint)),static_cast<int32_t>(offsetof(copier_t41FD1917B7107DD57A439EA3C0FF23E2D7FDE16E, ___buttonAction)),static_cast<int32_t>(offsetof(copier_t41FD1917B7107DD57A439EA3C0FF23E2D7FDE16E, ___grabObject)),static_cast<int32_t>(offsetof(copier_t41FD1917B7107DD57A439EA3C0FF23E2D7FDE16E, ___audioSource)),static_cast<int32_t>(offsetof(copier_t41FD1917B7107DD57A439EA3C0FF23E2D7FDE16E, ___grabInteractable)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9340[6] = 
 {
-	static_cast<int32_t>(offsetof(U3CSinkDoorU3Ed__4_t3585CC0A10DE6DF09D6149E95B40060DEC58C6A7, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CSinkDoorU3Ed__4_t3585CC0A10DE6DF09D6149E95B40060DEC58C6A7, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CSinkDoorU3Ed__4_t3585CC0A10DE6DF09D6149E95B40060DEC58C6A7, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CSinkDoorU3Ed__4_t3585CC0A10DE6DF09D6149E95B40060DEC58C6A7, ___U3CstartPositionU3E5__2)),static_cast<int32_t>(offsetof(U3CSinkDoorU3Ed__4_t3585CC0A10DE6DF09D6149E95B40060DEC58C6A7, ___U3CendPositionU3E5__3)),static_cast<int32_t>(offsetof(U3CSinkDoorU3Ed__4_t3585CC0A10DE6DF09D6149E95B40060DEC58C6A7, ___U3CelapsedU3E5__4)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9341[3] = 
+	static_cast<int32_t>(offsetof(U3CMoveDoorU3Ed__9_tD6DE611D32D005D7A3FD56538E093CC51986BAF7, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CMoveDoorU3Ed__9_tD6DE611D32D005D7A3FD56538E093CC51986BAF7, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CMoveDoorU3Ed__9_tD6DE611D32D005D7A3FD56538E093CC51986BAF7, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CMoveDoorU3Ed__9_tD6DE611D32D005D7A3FD56538E093CC51986BAF7, ___U3CstartPositionU3E5__2)),static_cast<int32_t>(offsetof(U3CMoveDoorU3Ed__9_tD6DE611D32D005D7A3FD56538E093CC51986BAF7, ___U3CendPositionU3E5__3)),static_cast<int32_t>(offsetof(U3CMoveDoorU3Ed__9_tD6DE611D32D005D7A3FD56538E093CC51986BAF7, ___U3CelapsedU3E5__4)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9341[7] = 
 {
-	static_cast<int32_t>(offsetof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD, ___door)),static_cast<int32_t>(offsetof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD, ___animationDuration)),static_cast<int32_t>(offsetof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD, ___isAnimating)),};
+	static_cast<int32_t>(offsetof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD, ___door)),static_cast<int32_t>(offsetof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD, ___animationDuration)),static_cast<int32_t>(offsetof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD, ___doorAudioSource)),static_cast<int32_t>(offsetof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD, ___isAnimating)),static_cast<int32_t>(offsetof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD, ___isDoorDown)),static_cast<int32_t>(offsetof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD, ___upPosition)),static_cast<int32_t>(offsetof(DoorToggle_tF0BAE11D0CD5EE3B684BE1C0C360513502784FDD, ___downPosition)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9342[5] = 
 {
 	static_cast<int32_t>(offsetof(grababble_tD14BC27FA65797CCBBA14B60F1D699DF6F1310E6, ___itemName)),static_cast<int32_t>(offsetof(grababble_tD14BC27FA65797CCBBA14B60F1D699DF6F1310E6, ___itemMesh)),static_cast<int32_t>(offsetof(grababble_tD14BC27FA65797CCBBA14B60F1D699DF6F1310E6, ___itemValue)),static_cast<int32_t>(offsetof(grababble_tD14BC27FA65797CCBBA14B60F1D699DF6F1310E6, ____isHeld)),static_cast<int32_t>(offsetof(grababble_tD14BC27FA65797CCBBA14B60F1D699DF6F1310E6, ____xWasPressed)),};

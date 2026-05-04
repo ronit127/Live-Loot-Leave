@@ -12,29 +12,44 @@
 //     }
 // }
 
+
 using UnityEngine;
 using System.Collections;
 
 public class DoorToggle : MonoBehaviour
 {
     public GameObject door;
-    public float animationDuration = 2f; 
+    public float animationDuration = 2f;
+    public AudioSource doorAudioSource;
 
     private bool isAnimating = false;
+    private bool isDoorDown = false;
+
+    private Vector3 upPosition;
+    private Vector3 downPosition;
+
+    void Start()
+    {
+        upPosition = door.transform.position;
+        downPosition = upPosition - new Vector3(0, door.transform.localScale.y, 0);
+    }
 
     public void Toggle()
     {
         if (door != null && !isAnimating)
-            StartCoroutine(SinkDoor());
-        
+            StartCoroutine(MoveDoor());
     }
 
-    private IEnumerator SinkDoor()
+    private IEnumerator MoveDoor()
     {
         isAnimating = true;
 
-        Vector3 startPosition = door.transform.position;
-        Vector3 endPosition = startPosition - new Vector3(0, door.transform.localScale.y, 0);
+        if (doorAudioSource != null)
+            doorAudioSource.Play();
+
+        door.SetActive(true);
+        Vector3 startPosition = isDoorDown ? downPosition : upPosition;
+        Vector3 endPosition = isDoorDown ? upPosition : downPosition;
 
         float elapsed = 0f;
 
@@ -42,14 +57,16 @@ public class DoorToggle : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = elapsed / animationDuration;
-
             door.transform.position = Vector3.Lerp(startPosition, endPosition, t);
             yield return null;
         }
 
         door.transform.position = endPosition;
-        door.SetActive(false); 
+        isDoorDown = !isDoorDown;
+
+        if (isDoorDown)
+            door.SetActive(false);
+
         isAnimating = false;
     }
 }
-
