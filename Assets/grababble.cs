@@ -26,7 +26,7 @@ public class grababble : MonoBehaviour
         GetComponent<MeshFilter>().sharedMesh = itemMesh;
     }
 
-    void OnValidate() => ApplyMesh(); // updates live in the editor when you assign the mesh
+    void OnValidate() => ApplyMesh();
 
     void Awake()
     {
@@ -40,7 +40,6 @@ public class grababble : MonoBehaviour
     {
         if (!_isHeld) return;
 
-        // X button = primaryButton on left controller
         var leftHands = new List<InputDevice>();
         InputDevices.GetDevicesAtXRNode(XRNode.LeftHand, leftHands);
 
