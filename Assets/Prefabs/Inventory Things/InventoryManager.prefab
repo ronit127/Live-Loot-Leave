@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1c4738454fa7d4b9a478aaa7fc5716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
+  collectiblesText: {fileID: 0}
+  totalValueText: {fileID: 0}

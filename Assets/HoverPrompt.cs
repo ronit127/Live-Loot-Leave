@@ -5,8 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class HoverPrompt : MonoBehaviour
 {
-    public Canvas promptCanvas;
-    public TextMeshProUGUI priceText; // assign a TMP text object in the inspector
+    public TextMeshProUGUI promptText;
+    public TextMeshProUGUI priceText;
 
     private XRBaseInteractable _interactable;
 
@@ -23,26 +23,22 @@ public class HoverPrompt : MonoBehaviour
 
     void Start()
     {
-        if (priceText != null)
-        {
-            var item = GetComponent<grababble>();
-            if (item != null)
-                priceText.text = $"{item.itemName} worth {item.itemValue}";
-        }
+        var item = GetComponent<grababble>();
+        if (item != null && priceText != null)
+            priceText.text = $"{item.itemName} worth {item.itemValue}";
 
-        if (promptCanvas != null)
-            promptCanvas.gameObject.SetActive(false);
+        HidePrompt();
     }
 
     public void ShowPrompt()
     {
-        if (promptCanvas != null)
-            promptCanvas.gameObject.SetActive(true);
+        if (promptText != null) promptText.gameObject.SetActive(true);
+        if (priceText != null)  priceText.gameObject.SetActive(true);
     }
 
     public void HidePrompt()
     {
-        if (promptCanvas != null)
-            promptCanvas.gameObject.SetActive(false);
+        if (promptText != null) promptText.gameObject.SetActive(false);
+        if (priceText != null)  priceText.gameObject.SetActive(false);
     }
 }
