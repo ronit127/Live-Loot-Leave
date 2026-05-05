@@ -51,6 +51,12 @@ public class InventoryManager : MonoBehaviour
             totalValueText.text = $"Value: {TotalValue}";
     }
 
+    public void Clear()
+    {
+        _items.Clear();
+        UpdateUI();
+    }
+
     public IReadOnlyList<InventoryItem> GetItems() => _items;
     public int Count => _items.Count;
     public int TotalValue => _items.Sum(i => i.value);
