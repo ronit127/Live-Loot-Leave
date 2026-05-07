@@ -81,6 +81,17 @@ mono_crash.*
 *.unitypackage.meta
 *.app
 
+# Unity build output folders
+*_BackUpThisFolder_ButDontShipItWithYourGame/
+*_DoNotShip/
+*_BurstDebugInformation_DoNotShip/
+
+# Generated solution/project files
+*.slnx
+
+# Claude Code
+.claude/
+
 # Crashlytics generated file
 crashlytics-build.properties
 
