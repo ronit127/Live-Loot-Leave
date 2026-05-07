@@ -5,17 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
     path: Assets/Scenes/sanj_scene.unity
     guid: 2548f4a10dc52d74889b3f532e638be8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ronj_scene.unity
     guid: e02e7e046ee5d8d4e85c5937246fcfef
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bb14eb31139331d4da589f8e586a8b5d, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 567d103973fdd9b47895ea0e2d7bcc5a, type: 2}
-  m_UseUCBPForAssetBundles: 0
