@@ -108,7 +108,15 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = (forward * z + right * x);
 
         // speed
-        float currentSpeed = isSprinting ? sprintSpeed : (isSneaking ? sneakSpeed : walkSpeed);
+        // float currentSpeed = isSprinting ? sprintSpeed : (isSneaking ? sneakSpeed : walkSpeed);
+        // speed — pull base speeds from AgilityManager if available
+        float agilityWalk = AgilityManager.Instance != null ? AgilityManager.Instance.CurrentSpeed : walkSpeed;
+        float agilitySprint = agilityWalk + (sprintSpeed - walkSpeed); // preserve the sprint offset
+        float agilitySneakSpeed = sneakSpeed; // sneak stays fixed
+
+        float currentSpeed = isSprinting ? agilitySprint : (isSneaking ? agilitySneakSpeed : agilityWalk);
+
+
 
         if (controller.isGrounded) 
         {

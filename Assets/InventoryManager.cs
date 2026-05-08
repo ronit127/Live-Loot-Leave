@@ -34,14 +34,34 @@ public class InventoryManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
-    public void AddItem(InventoryItem item)
+    
+    // update for cap
+    public bool AddItem(InventoryItem item)
     {
+        int maxValue = StrengthManager.Instance != null 
+        ? StrengthManager.Instance.CurrentMaxInventoryValue 
+        : 30;
+
+        if (TotalValue + item.value > maxValue)
+        {
+            Debug.Log($"[Inventory] Cannot add {item.name} - exceeds max inventory value of {maxValue}");
+            return false;
+        }
+
         _items.Add(item);
         OnItemAdded?.Invoke(item);
         UpdateUI();
-        Debug.Log($"[Inventory] +{item.name}  value:{item.value}  |  Total items: {_items.Count}");
+        Debug.Log($"[Inventory] + {item.name} value:{item.value} | Total: {TotalValue}/{maxValue}");
+        return true;
     }
+
+    // public void AddItem(InventoryItem item)
+    // {
+    //     _items.Add(item);
+    //     OnItemAdded?.Invoke(item);
+    //     UpdateUI();
+    //     Debug.Log($"[Inventory] +{item.name}  value:{item.value}  |  Total items: {_items.Count}");
+    // }
 
     void UpdateUI()
     {
