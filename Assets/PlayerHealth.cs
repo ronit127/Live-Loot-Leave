@@ -47,4 +47,14 @@ public class PlayerHealth : MonoBehaviour
         if (healthText != null)
             healthText.text = $"HP: {Health} / {maxHealth}";
     }
+
+    // heal when sell
+    public void Heal(int amount)
+    {
+        if (Health < 0) return;
+        Health = Mathf.Min(maxHealth, Health + amount);
+        OnHealthChanged?.Invoke(Health);
+        UpdateUI();
+        Debug.Log($"[Health] Healed by {amount}. HP: {Health}/{maxHealth}");
+    }
 }
