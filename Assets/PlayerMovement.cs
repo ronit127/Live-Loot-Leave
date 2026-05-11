@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed = 5f;
     public float sneakSpeed = 1.2f;
     public float gravity = 9.81f;
+    public float walkPanSpeed = 6.28f;
+    public float sprintPanSpeed = 10.48f;
 
     [Header("Comfort Settings")]
     public Volume postProcessVolume; 
@@ -25,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource audioSource;
     public ParticleSystem sprintParticles;
     public AudioClip footstepSprint;
+    public AudioClip footstepWalk;
 
     [Header("Input Settings")]
     public XRNode movementHand = XRNode.LeftHand;
@@ -126,10 +129,19 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleVignette()
     {
-        if (vignette == null) return;
+        if (vignette == null)
+        {
+            if (postProcessVolume != null && postProcessVolume.profile != null)
+            {
+                postProcessVolume.profile.TryGet(out vignette);
+            }
+            return;
+        }
 
         float target = isSprinting ? sprintVignette : normalVignette;
-        vignette.intensity.value = Mathf.Lerp(vignette.intensity.value, target, Time.deltaTime * vignetteSpeed);
+        
+        float nextValue = Mathf.Lerp(vignette.intensity.value, target, Time.deltaTime * vignetteSpeed);
+        vignette.intensity.Override(nextValue);
     }
 
     void HandleFeedback()
@@ -142,20 +154,34 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // sound
-        if (audioSource != null && footstepSprint != null)
+        if (audioSource != null)
         {
-            if (isSprinting && controller.velocity.magnitude > 0.1f)
+            bool isMoving = controller.velocity.magnitude > 0.1f && controller.isGrounded;
+
+            if (isMoving)
             {
-                if (!audioSource.isPlaying)
+                AudioClip targetClip = isSprinting ? footstepSprint : footstepWalk;
+                
+                // choose the pan speed based on movement state
+                float currentPanSpeed = isSprinting ? sprintPanSpeed : walkPanSpeed;
+
+                if (audioSource.clip != targetClip || !audioSource.isPlaying)
                 {
-                    audioSource.clip = footstepSprint;
+                    audioSource.clip = targetClip;
                     audioSource.loop = true;
                     audioSource.Play();
                 }
+
+                // apply the dynamic panning
+                audioSource.panStereo = Mathf.Cos(Time.time * currentPanSpeed);
             }
             else
             {
-                audioSource.Stop();
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                    audioSource.panStereo = 0;
+                }
             }
         }
     }
